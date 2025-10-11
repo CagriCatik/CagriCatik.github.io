@@ -1,53 +1,198 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Portfolio</title>
+    <title>{Your Name} | Portfolio</title>
+    <meta name="description" content="{One sentence summary of you}" />
+    <meta name="theme-color" content="#0ea5e9" id="meta-theme-color" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Name Surname</h1>
-      <nav>
+    <!-- Scroll progress -->
+    <div class="progress" aria-hidden="true"><span></span></div>
+
+    <!-- Under Construction banner -->
+    <aside class="uc-banner" role="status" aria-live="polite">
+      <div class="uc-stripes" aria-hidden="true"></div>
+      <p>
+        This website is under construction. Content and layout are being updated during the build process.
+      </p>
+      <button class="icon-btn uc-dismiss" aria-label="Dismiss notice" title="Dismiss">×</button>
+    </aside>
+
+    <header class="site-header" id="top">
+      <a href="#top" class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 7.36H22l-6.19 4.5 2.36 7.28L12 16.64 5.83 21.14l2.36-7.28L2 9.36h7.61L12 2z" fill="currentColor"/></svg>
+        <span>{Your Name}</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zM4 12H1v-1h3v1zm19 0h-3v-1h3v1zM6.76 18.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM20.45 5.55l-1.41-1.41-1.79 1.8 1.4 1.4 1.8-1.79zM11 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
       </nav>
     </header>
 
-    <section id="hero">
-      <h2>Hero</h2>
-      <p> </p>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>About section</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="card">
-          <h3>Project</h3>
-          <p>Project Description.</p>
+    <section id="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h1 class="hero-title">{Short punchy headline}</h1>
+        <p class="hero-subtitle">{1-2 line value prop or bio}</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#about" class="btn btn-ghost">About Me</a>
         </div>
-        <div class="card">
-          <h3>Project</h3>
-          <p>Project Description.</p>
+        <div class="badges" aria-label="Highlights">
+          <span>Dark/Light</span><span>SPA-like Nav</span><span>Tag Filters</span><span>Accessible</span>
         </div>
       </div>
+      <a class="scroll-down" href="#about" aria-label="Scroll to content">Scroll</a>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/CagriCatik">github.com/CagriCatik</a></p>
-    </section>
+    <main id="content">
+      <section id="about" class="section">
+        <header class="section-head">
+          <h2>About Me</h2>
+          <p>{Replace with a concise summary of background, focus areas, and interests.}</p>
+        </header>
+        <div class="about-grid">
+          <article class="card lift">
+            <h3>Skills</h3>
+            <ul class="tags">
+              <li>{Skill A}</li>
+              <li>{Skill B}</li>
+              <li>{Skill C}</li>
+              <li>{Skill D}</li>
+              <li>{Skill E}</li>
+              <li>{Skill F}</li>
+            </ul>
+          </article>
+          <article class="card lift">
+            <h3>Highlights</h3>
+            <ul class="list">
+              <li>{Key result or achievement}</li>
+              <li>{Metric or impact statement}</li>
+              <li>{What you are optimizing for}</li>
+            </ul>
+          </article>
+          <article class="card lift">
+            <h3>Now</h3>
+            <p>{What you are learning or building right now}</p>
+          </article>
+        </div>
+      </section>
 
-    <footer>
-      <p>© 2025 Name Surname </p>
+      <section id="projects" class="section">
+        <header class="section-head">
+          <h2>Projects</h2>
+          <p>Filter by tag.</p>
+          <div class="filters" role="toolbar" aria-label="Project filters">
+            <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" data-filter="web">Web</button>
+            <button class="chip" data-filter="ml">ML</button>
+            <button class="chip" data-filter="tools">Tools</button>
+          </div>
+        </header>
+
+        <div class="project-grid">
+          <article class="project card reveal" data-tags="web tools">
+            <img src="https://picsum.photos/640/360?1" alt="Project cover" loading="lazy" width="640" height="360" />
+            <div class="project-body">
+              <h3>{Project Title 1}</h3>
+              <p>{1-2 sentence project summary with tech and outcome}</p>
+              <ul class="tags"><li>web</li><li>tools</li></ul>
+              <div class="actions">
+                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
+                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-tags="ml web">
+            <img src="https://picsum.photos/640/360?2" alt="Project cover" loading="lazy" width="640" height="360" />
+            <div class="project-body">
+              <h3>{Project Title 2}</h3>
+              <p>{Brief description, stack, and role}</p>
+              <ul class="tags"><li>ml</li><li>web</li></ul>
+              <div class="actions">
+                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
+                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-tags="tools">
+            <img src="https://picsum.photos/640/360?3" alt="Project cover" loading="lazy" width="640" height="360" />
+            <div class="project-body">
+              <h3>{Project Title 3}</h3>
+              <p>{Key features and impact in one line}</p>
+              <ul class="tags"><li>tools</li></ul>
+              <div class="actions">
+                <a class="btn btn-small" href="{Docs URL}">Docs</a>
+                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+
+                    <article class="project card reveal" data-tags="tools">
+            <img src="https://picsum.photos/640/360?4" alt="Project cover" loading="lazy" width="640" height="360" />
+            <div class="project-body">
+              <h3>{Project Title 4}</h3>
+              <p>{Key features and impact in one line}</p>
+              <ul class="tags"><li>tools</li></ul>
+              <div class="actions">
+                <a class="btn btn-small" href="{Docs URL}">Docs</a>
+                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p>{How to reach you, response policy}</p>
+        </header>
+        <div class="contact-grid">
+          <form class="card lift contact-form" method="get" action="mailto:{your.email@example.com}">
+            <label>
+              Name
+              <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="body" rows="5" placeholder="Hello..." required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Open Email Client</button>
+          </form>
+
+          <aside class="card lift">
+            <h3>Links</h3>
+            <ul class="list">
+              <li>GitHub: <a href="https://github.com/{your-handle}" target="_blank" rel="noopener">github.com/{your-handle}</a></li>
+              <li>Email: <a href="mailto:{your.email@example.com}">{your.email@example.com}</a></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> {Your Name}. Built with HTML, CSS, and JS.</p>
+      <a href="#top" class="back-to-top" aria-label="Back to top">Top</a>
     </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
