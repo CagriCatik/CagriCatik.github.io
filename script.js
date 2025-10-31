@@ -11,11 +11,13 @@
 
   // Toggle handler
   const toggle = document.getElementById("theme-toggle");
-  toggle.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    setTheme(next);
-    localStorage.setItem("theme", next);
-  });
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      setTheme(next);
+      localStorage.setItem("theme", next);
+    });
+  }
 
   // Update theme color for mobile UI chrome
   function setTheme(mode) {
@@ -25,16 +27,17 @@
       root.setAttribute("data-theme", mode);
     }
     const current = root.getAttribute("data-theme");
-    metaTheme.content = current === "dark" ? "#0b0d10" : "#0ea5e9";
+    if (metaTheme) metaTheme.content = current === "dark" ? "#05070a" : "#0ea5e9";
   }
 
   // Scroll progress
-  const progress = document.querySelector(".progress span");
+  const progressSpan = document.querySelector(".progress span");
   const onScroll = () => {
+    if (!progressSpan) return;
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
     const ratio = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progress.style.width = ratio.toFixed(2) + "%";
+    progressSpan.style.width = ratio.toFixed(2) + "%";
   };
   document.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -54,28 +57,37 @@
     else el.classList.add("is-visible");
   });
 
-  // Filter chips
+  // Filter chips (homepage only)
   const chips = Array.from(document.querySelectorAll(".chip"));
   const cards = Array.from(document.querySelectorAll(".project"));
-  chips.forEach(chip => {
-    chip.addEventListener("click", () => {
-      chips.forEach(c => { c.classList.toggle("is-active", c === chip); c.setAttribute("aria-pressed", c === chip); });
-      const key = chip.dataset.filter;
-      cards.forEach(card => {
-        const tags = (card.getAttribute("data-tags") || "").split(/\s+/);
-        const show = key === "all" || tags.includes(key);
-        card.style.display = show ? "" : "none";
+  if (chips.length) {
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => {
+          const active = c === chip;
+          c.classList.toggle("is-active", active);
+          c.setAttribute("aria-pressed", String(active));
+        });
+        const key = chip.dataset.filter;
+        cards.forEach(card => {
+          const tags = (card.getAttribute("data-tags") || "").split(/\s+/);
+          const show = key === "all" || tags.includes(key);
+          card.style.display = show ? "" : "none";
+        });
       });
     });
-  });
+  }
 
   // Smooth anchor scrolling (reduced motion respected)
   const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!prefersReduced) {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener("click", (e) => {
-        const id = a.getAttribute("href").slice(1);
-        const target = id ? document.getElementById(id) : null;
+        const href = a.getAttribute("href");
+        if (!href) return;
+        const id = href.slice(1);
+        if (!id) return;
+        const target = document.getElementById(id);
         if (target) {
           e.preventDefault();
           window.scrollTo({ top: target.offsetTop - 64, behavior: "smooth" });
@@ -87,6 +99,7 @@
   // Back to top visibility
   const backToTop = document.querySelector(".back-to-top");
   const toggleTop = () => {
+    if (!backToTop) return;
     backToTop.style.opacity = window.scrollY > 400 ? "1" : "0.6";
   };
   document.addEventListener("scroll", toggleTop, { passive: true });
@@ -94,11 +107,13 @@
 
   // Year
   const yearEl = document.getElementById("year");
-  yearEl.textContent = new Date().getFullYear().toString();
+  if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
 
   // Print resume button
   const printBtn = document.getElementById("print-btn");
-  printBtn.addEventListener("click", () => window.print());
+  if (printBtn) {
+    printBtn.addEventListener("click", () => window.print());
+  }
 
   // Under Construction banner dismiss and persistence
   const uc = document.querySelector(".uc-banner");
@@ -110,6 +125,17 @@
     ucDismissBtn.addEventListener("click", () => {
       uc.style.display = "none";
       localStorage.setItem(UC_KEY, "1");
+    });
+  }
+
+  // Active navigation state
+  const activePage = document.body.dataset.page;
+  if (activePage) {
+    document.querySelectorAll(".nav a[data-nav]").forEach(link => {
+      const isActive = link.dataset.nav === activePage;
+      link.classList.toggle("is-current", isActive);
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
     });
   }
 })();

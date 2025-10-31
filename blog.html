@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog · Çağrı Çatık</title>
+    <meta name="description" content="Articles, notes, and essays on design systems, creative technology, and product craft by Çağrı Çatık." />
+    <meta name="theme-color" content="#0ea5e9" id="meta-theme-color" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="blog">
+    <div class="progress" aria-hidden="true"><span></span></div>
+
+    <aside class="uc-banner" role="status" aria-live="polite">
+      <div class="uc-stripes" aria-hidden="true"></div>
+      <p>This website is under construction. Content and layout are being updated during the build process.</p>
+      <button class="icon-btn uc-dismiss" aria-label="Dismiss notice" title="Dismiss">×</button>
+    </aside>
+
+    <header class="site-header" id="top">
+      <a href="index.html" class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 7.36H22l-6.19 4.5 2.36 7.28L12 16.64 5.83 21.14l2.36-7.28L2 9.36h7.61L12 2z" fill="currentColor"/></svg>
+        <span>Çağrı Çatık</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="blog.html" data-nav="blog">Blog</a>
+        <a href="index.html#contact" data-nav="contact">Contact</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zM4 12H1v-1h3v1zm19 0h-3v-1h3v1zM6.76 18.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM20.45 5.55l-1.41-1.41-1.79 1.8 1.4 1.4 1.8-1.79zM11 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="page-hero-inner">
+        <p class="eyebrow">Blog</p>
+        <h1>Thoughts on craft, systems, and creative tech.</h1>
+        <p class="lede">Long-form explorations, notes from talks, and experiments that push my practice forward.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#newsletter">Subscribe for updates</a>
+        </div>
+      </div>
+    </section>
+
+    <main id="content">
+      <section class="section" aria-label="Featured posts">
+        <header class="section-head">
+          <h2>Featured</h2>
+          <p>Start here for the greatest hits.</p>
+        </header>
+        <div class="blog-feature-grid">
+          <article id="design-systems" class="card lift blog-feature">
+            <h3>Design Systems at Human Scale</h3>
+            <p>How to balance governance, empowerment, and storytelling when scaling component libraries.</p>
+            <ul class="tags"><li>Design systems</li><li>Leadership</li></ul>
+            <time datetime="2024-02-12">Feb 12, 2024</time>
+            <a class="btn btn-small" href="#newsletter">Read full essay (coming soon)</a>
+          </article>
+          <article id="motion" class="card lift blog-feature">
+            <h3>Motion as Product Strategy</h3>
+            <p>Using motion principles to guide attention, teach behavior, and create emotional resonance.</p>
+            <ul class="tags"><li>Motion</li><li>Product</li></ul>
+            <time datetime="2023-11-04">Nov 4, 2023</time>
+            <a class="btn btn-small" href="#newsletter">Read full essay (coming soon)</a>
+          </article>
+          <article id="mentorship" class="card lift blog-feature">
+            <h3>Mentoring Creative Technologists</h3>
+            <p>Practices for fostering growth, building psychological safety, and sparking curiosity.</p>
+            <ul class="tags"><li>Mentorship</li><li>Culture</li></ul>
+            <time datetime="2023-07-22">Jul 22, 2023</time>
+            <a class="btn btn-small" href="#newsletter">Read full essay (coming soon)</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Latest updates">
+        <header class="section-head">
+          <h2>Latest</h2>
+          <p>Changelog entries, quick tips, and studio notes.</p>
+        </header>
+        <div class="blog-list">
+          <article class="card lift blog-list-item">
+            <h3>Releasing my design token starter kit</h3>
+            <time datetime="2024-03-18">Mar 18, 2024</time>
+            <p>Sharing the workflow I rely on to sync Figma, code, and documentation across teams.</p>
+          </article>
+          <article class="card lift blog-list-item">
+            <h3>Talk recap: inclusive prototyping rituals</h3>
+            <time datetime="2024-01-28">Jan 28, 2024</time>
+            <p>Slides, tools, and prompts from my workshop at Maker Summit.</p>
+          </article>
+          <article class="card lift blog-list-item">
+            <h3>Notes from building a realtime collaboration engine</h3>
+            <time datetime="2023-09-15">Sep 15, 2023</time>
+            <p>Lessons on conflict resolution, performance, and UX when designing collaborative canvases.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="newsletter" class="section">
+        <header class="section-head">
+          <h2>Stay in the loop</h2>
+          <p>Monthly digest of articles, experiments, and resources.</p>
+        </header>
+        <div class="cta-panel card lift">
+          <div>
+            <h3>Join the studio mailing list</h3>
+            <p>No spam — just thoughtful notes on building better products.</p>
+          </div>
+          <form class="inline-form">
+            <label class="sr-only" for="blog-email">Email address</label>
+            <input id="blog-email" type="email" name="email" placeholder="you@example.com" required />
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Çağrı Çatık. Crafted with curiosity & intent.</p>
+      <a href="#top" class="back-to-top" aria-label="Back to top">Top</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{Çağrı Çatık} | Portfolio</title>
-    <meta name="description" content="{One sentence summary of you}" />
+    <title>Çağrı Çatık · Creative Engineer & Product Builder</title>
+    <meta name="description" content="Portfolio, projects, writing, and experiments by creative engineer Çağrı Çatık." />
     <meta name="theme-color" content="#0ea5e9" id="meta-theme-color" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-page="home">
     <!-- Scroll progress -->
     <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -23,14 +23,16 @@
     </aside>
 
     <header class="site-header" id="top">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 7.36H22l-6.19 4.5 2.36 7.28L12 16.64 5.83 21.14l2.36-7.28L2 9.36h7.61L12 2z" fill="currentColor"/></svg>
         <span>Çağrı Çatık</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="blog.html" data-nav="blog">Blog</a>
+        <a href="index.html#contact" data-nav="contact">Contact</a>
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zM4 12H1v-1h3v1zm19 0h-3v-1h3v1zM6.76 18.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM20.45 5.55l-1.41-1.41-1.79 1.8 1.4 1.4 1.8-1.79zM11 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -42,15 +44,31 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-inner">
-        <h1 class="hero-title">This is a short punchy headline</h1>
-        <p class="hero-subtitle">1-2 line value prop or bio</p>
+        <div class="hero-intro">Product Engineer · Design Systems · ML Curious</div>
+        <h1 class="hero-title">Crafting playful, polished digital experiences that feel inevitable.</h1>
+        <p class="hero-subtitle">I'm Çağrı, a creative technologist blending engineering, design, and strategy to build delightful products, expressive interfaces, and immersive prototypes.</p>
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#about" class="btn btn-ghost">About Me</a>
+          <a href="projects.html" class="btn btn-primary">Explore Projects</a>
+          <a href="about.html" class="btn btn-ghost">Read My Story</a>
+          <button id="print-btn" class="btn btn-ghost" type="button">Download Résumé</button>
         </div>
         <div class="badges" aria-label="Highlights">
-          <span>Dark/Light</span><span>SPA-like Nav</span><span>Tag Filters</span><span>Accessible</span>
+          <span>Dark / Light Ready</span><span>Motion Design</span><span>System Thinking</span><span>Public Speaking</span>
         </div>
+      </div>
+      <div class="hero-cards" aria-hidden="true">
+        <article class="mini-card">
+          <h3>Latest Drop</h3>
+          <p>Shipped a generative art playground with live shaders and AI assisted palettes.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Currently</h3>
+          <p>Building a design ops toolkit to orchestrate component libraries at scale.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Next Talk</h3>
+          <p>Speaking at Front-End Connect about crafting inclusive design systems.</p>
+        </article>
       </div>
       <a class="scroll-down" href="#about" aria-label="Scroll to content">Scroll</a>
     </section>
@@ -59,31 +77,55 @@
       <section id="about" class="section">
         <header class="section-head">
           <h2>About Me</h2>
-          <p>{Replace with a concise summary of background, focus areas, and interests.}</p>
+          <p>I transform complex ideas into elegant products, balancing thoughtful UX, robust engineering, and inspiring storytelling.</p>
         </header>
         <div class="about-grid">
           <article class="card lift">
-            <h3>Skills</h3>
+            <h3>Toolkit</h3>
             <ul class="tags">
-              <li>{Skill A}</li>
-              <li>{Skill B}</li>
-              <li>{Skill C}</li>
-              <li>{Skill D}</li>
-              <li>{Skill E}</li>
-              <li>{Skill F}</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Design Systems</li>
+              <li>Three.js</li>
+              <li>Storybook</li>
+              <li>Node.js</li>
             </ul>
           </article>
           <article class="card lift">
             <h3>Highlights</h3>
             <ul class="list">
-              <li>{Key result or achievement}</li>
-              <li>{Metric or impact statement}</li>
-              <li>{What you are optimizing for}</li>
+              <li>Scaled multi-brand design system to 2B+ monthly impressions</li>
+              <li>Led prototyping lab accelerating concept validation by 6×</li>
+              <li>Mentor and speaker at developer/design conferences</li>
             </ul>
           </article>
           <article class="card lift">
             <h3>Now</h3>
-            <p>{What you are learning or building right now}</p>
+            <p>Exploring AI-assisted workflows, generative art pipelines, and creative coding with GLSL + WASM.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <header class="section-head">
+          <h2>Experience</h2>
+          <p>A snapshot of moments that shaped how I think about products and teams.</p>
+        </header>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2022 — Present · Principal Product Engineer @ Lumen Labs</div>
+            <h3>Building cohesive platforms from idea to launch</h3>
+            <p>Lead a cross-disciplinary squad shipping design systems, prototyping frameworks, and polished user journeys for high-growth SaaS teams.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2019 — 2022 · Senior Front-End Engineer @ Aether</div>
+            <h3>Scaled a design system powering 12 product lines</h3>
+            <p>Architected component APIs, accessibility guidelines, and contributor tooling used by 70+ product teams around the world.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2016 — 2019 · Creative Technologist @ Northwind</div>
+            <h3>Prototyped immersive marketing experiences</h3>
+            <p>Collaborated with storytellers to ship interactive campaigns, AR experiences, and data-driven visualizations for global brands.</p>
           </article>
         </div>
       </section>
@@ -102,53 +144,53 @@
 
         <div class="project-grid">
           <article class="project card reveal" data-tags="web tools">
-            <img src="https://picsum.photos/640/360?1" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Dashboard interface with futuristic gradients" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 1}</h3>
-              <p>{1-2 sentence project summary with tech and outcome}</p>
+              <h3>Pulseframe Design System</h3>
+              <p>Composable enterprise UI system with adaptive theming, design tokens, and accessibility baked in.</p>
               <ul class="tags"><li>web</li><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="https://example.com" target="_blank" rel="noopener">Live</a>
+                <a class="btn btn-small btn-ghost" href="https://github.com" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
           <article class="project card reveal" data-tags="ml web">
-            <img src="https://picsum.photos/640/360?2" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80&sat=-100" alt="Generative art grid" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 2}</h3>
-              <p>{Brief description, stack, and role}</p>
+              <h3>Neural Sketchbook</h3>
+              <p>Hybrid ML + WebGL playground that turns sketches into living generative compositions.</p>
               <ul class="tags"><li>ml</li><li>web</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="https://example.com" target="_blank" rel="noopener">Live</a>
+                <a class="btn btn-small btn-ghost" href="https://github.com" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
           <article class="project card reveal" data-tags="tools">
-            <img src="https://picsum.photos/640/360?3" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Command line interface" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 3}</h3>
-              <p>{Key features and impact in one line}</p>
+              <h3>Relay CLI</h3>
+              <p>Developer toolchain for scaffolding apps, syncing tokens, and orchestrating design reviews.</p>
               <ul class="tags"><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Docs URL}">Docs</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="https://example.com">Docs</a>
+                <a class="btn btn-small btn-ghost" href="https://github.com" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
-                    <article class="project card reveal" data-tags="tools">
-            <img src="https://picsum.photos/640/360?4" alt="Project cover" loading="lazy" width="640" height="360" />
+          <article class="project card reveal" data-tags="tools">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Developer writing code" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 4}</h3>
-              <p>{Key features and impact in one line}</p>
+              <h3>Harmony Docs</h3>
+              <p>Documentation platform with AI-assisted search, interactive sandboxes, and custom theming.</p>
               <ul class="tags"><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Docs URL}">Docs</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="https://example.com">Docs</a>
+                <a class="btn btn-small btn-ghost" href="https://github.com" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
@@ -156,58 +198,60 @@
       </section>
 
       <section id="blog" class="section">
-  <header class="section-head">
-    <h2>Blog</h2>
-    <p>Insights, tutorials, and updates.</p>
-  </header>
+        <header class="section-head">
+          <h2>Blog</h2>
+          <p>Insights, tutorials, and updates from my studio.</p>
+        </header>
 
-  <div class="blog-grid">
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog1" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 1}" target="_blank" rel="noopener">{Blog Post Title 1}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
+        <div class="blog-grid">
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Laptop and design sketches" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog.html#design-systems">Design Systems at Human Scale</a></h3>
+              <p>Lessons on storytelling, adoption, and governance from shipping multi-brand component libraries.</p>
+              <time datetime="2024-02-12">Feb 12, 2024</time>
+            </div>
+          </article>
 
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog2" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 2}" target="_blank" rel="noopener">{Blog Post Title 2}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Abstract colorful gradient" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog.html#motion">Motion as Product Strategy</a></h3>
+              <p>Why micro-interactions and motion systems create clarity, empathy, and joy.</p>
+              <time datetime="2023-11-04">Nov 4, 2023</time>
+            </div>
+          </article>
 
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog3" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 3}" target="_blank" rel="noopener">{Blog Post Title 3}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" alt="Developers collaborating" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog.html#mentorship">Mentoring Creative Technologists</a></h3>
+              <p>Building rituals, feedback loops, and safe playgrounds for emerging makers.</p>
+              <time datetime="2023-07-22">Jul 22, 2023</time>
+            </div>
+          </article>
+        </div>
 
-
-      <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog4" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 3}" target="_blank" rel="noopener">{Blog Post Title 4}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
-  </div>
-</section>
+        <div class="cta-panel card lift">
+          <div>
+            <h3>Get new posts & experiments in your inbox</h3>
+            <p>A lightweight digest on creativity, systems, and the craft of building digital products.</p>
+          </div>
+          <form class="inline-form">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" required />
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
 
       <section id="contact" class="section">
         <header class="section-head">
           <h2>Contact</h2>
-          <p>{How to reach you, response policy}</p>
+          <p>Open to collaborations, consulting, speaking, and mentoring opportunities.</p>
         </header>
         <div class="contact-grid">
-          <form class="card lift contact-form" method="get" action="mailto:{your.email@example.com}">
+          <form class="card lift contact-form" method="get" action="mailto:hello@cagricatik.com">
             <label>
               Name
               <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
@@ -224,10 +268,11 @@
           </form>
 
           <aside class="card lift">
-            <h3>Links</h3>
+            <h3>Elsewhere</h3>
             <ul class="list">
-              <li>GitHub: <a href="https://github.com/{your-handle}" target="_blank" rel="noopener">github.com/{your-handle}</a></li>
-              <li>Email: <a href="mailto:{your.email@example.com}">{your.email@example.com}</a></li>
+              <li>GitHub: <a href="https://github.com/cagricatik" target="_blank" rel="noopener">github.com/cagricatik</a></li>
+              <li>Dribbble: <a href="https://dribbble.com" target="_blank" rel="noopener">dribbble.com/cagri</a></li>
+              <li>Email: <a href="mailto:hello@cagricatik.com">hello@cagricatik.com</a></li>
             </ul>
           </aside>
         </div>
@@ -235,7 +280,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> {Your Name}. Built with HTML, CSS, and JS.</p>
+      <p>© <span id="year"></span> Çağrı Çatık. Crafted with curiosity & intent.</p>
       <a href="#top" class="back-to-top" aria-label="Back to top">Top</a>
     </footer>
 
