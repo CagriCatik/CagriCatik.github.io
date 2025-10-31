@@ -96,6 +96,67 @@
     });
   }
 
+  // Hero Three.js background
+  const heroCanvas = document.getElementById("hero-canvas");
+  if (heroCanvas && window.THREE && !prefersReduced) {
+    const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
+    camera.position.set(0, 0, 4);
+
+    const coreGeometry = new THREE.IcosahedronGeometry(1.3, 2);
+    const coreMaterial = new THREE.MeshPhongMaterial({ color: 0x38bdf8, wireframe: true, transparent: true, opacity: 0.45 });
+    const core = new THREE.Mesh(coreGeometry, coreMaterial);
+    scene.add(core);
+
+    const shellGeometry = new THREE.SphereGeometry(2.4, 64, 32);
+    const shellMaterial = new THREE.PointsMaterial({ color: 0x0ea5e9, size: 0.04, transparent: true, opacity: 0.5 });
+    const shell = new THREE.Points(shellGeometry, shellMaterial);
+    scene.add(shell);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.35);
+    const directional = new THREE.DirectionalLight(0x38bdf8, 1.2);
+    directional.position.set(2, 2, 3);
+    scene.add(ambient, directional);
+
+    const clock = new THREE.Clock();
+    const pointer = new THREE.Vector2(0, 0);
+
+    function resize() {
+      const host = heroCanvas.parentElement;
+      const width = host ? host.clientWidth : window.innerWidth;
+      const height = host ? host.clientHeight : window.innerHeight * 0.6;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height, false);
+    }
+
+    function animate() {
+      const delta = clock.getDelta();
+      core.rotation.x += delta * 0.3;
+      core.rotation.y += delta * 0.2;
+      shell.rotation.y -= delta * 0.1;
+      camera.position.x += (pointer.x * 0.5 - camera.position.x) * 0.05;
+      camera.position.y += (pointer.y * 0.3 - camera.position.y) * 0.05;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+
+    resize();
+    animate();
+    window.addEventListener("resize", resize);
+
+    window.addEventListener("pointermove", (event) => {
+      const target = heroCanvas.parentElement || heroCanvas;
+      const bounds = target.getBoundingClientRect();
+      pointer.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+      pointer.y = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
+    });
+  }
+
   // Back to top visibility
   const backToTop = document.querySelector(".back-to-top");
   const toggleTop = () => {
@@ -108,12 +169,6 @@
   // Year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
-
-  // Print resume button
-  const printBtn = document.getElementById("print-btn");
-  if (printBtn) {
-    printBtn.addEventListener("click", () => window.print());
-  }
 
   // Under Construction banner dismiss and persistence
   const uc = document.querySelector(".uc-banner");
