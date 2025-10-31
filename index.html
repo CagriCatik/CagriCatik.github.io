@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{Çağrı Çatık} | Portfolio</title>
-    <meta name="description" content="{One sentence summary of you}" />
+    <title>Lorem Ipsum · Portfolio</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    <meta property="og:title" content="Lorem Ipsum · Portfolio" />
+    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cagricatik.github.io/" />
+    <link rel="canonical" href="https://cagricatik.github.io/" />
     <meta name="theme-color" content="#0ea5e9" id="meta-theme-color" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-page="home">
     <!-- Scroll progress -->
     <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -23,14 +28,16 @@
     </aside>
 
     <header class="site-header" id="top">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 7.36H22l-6.19 4.5 2.36 7.28L12 16.64 5.83 21.14l2.36-7.28L2 9.36h7.61L12 2z" fill="currentColor"/></svg>
         <span>Çağrı Çatık</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="blog.html" data-nav="blog">Blog</a>
+        <a href="index.html#contact" data-nav="contact">Contact</a>
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zM4 12H1v-1h3v1zm19 0h-3v-1h3v1zM6.76 18.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM20.45 5.55l-1.41-1.41-1.79 1.8 1.4 1.4 1.8-1.79zM11 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -41,15 +48,17 @@
     <section id="hero" class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <h1 class="hero-title">This is a short punchy headline</h1>
-        <p class="hero-subtitle">1-2 line value prop or bio</p>
+        <div class="hero-intro">Lorem ipsum dolor sit amet</div>
+        <h1 class="hero-title">Lorem ipsum dolor sit amet consectetur adipiscing elit.</h1>
+        <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus quis lorem tincidunt posuere sit amet quis ipsum.</p>
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#about" class="btn btn-ghost">About Me</a>
+          <a href="projects.html" class="btn btn-primary">Lorem Ipsum</a>
+          <a href="about.html" class="btn btn-ghost">Dolor Sit</a>
         </div>
         <div class="badges" aria-label="Highlights">
-          <span>Dark/Light</span><span>SPA-like Nav</span><span>Tag Filters</span><span>Accessible</span>
+          <span>Lorem</span><span>Ipsum</span><span>Dolor</span><span>Sit</span>
         </div>
       </div>
       <a class="scroll-down" href="#about" aria-label="Scroll to content">Scroll</a>
@@ -59,31 +68,55 @@
       <section id="about" class="section">
         <header class="section-head">
           <h2>About Me</h2>
-          <p>{Replace with a concise summary of background, focus areas, and interests.}</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi suspendisse potenti.</p>
         </header>
         <div class="about-grid">
           <article class="card lift">
-            <h3>Skills</h3>
+            <h3>Lorem</h3>
             <ul class="tags">
-              <li>{Skill A}</li>
-              <li>{Skill B}</li>
-              <li>{Skill C}</li>
-              <li>{Skill D}</li>
-              <li>{Skill E}</li>
-              <li>{Skill F}</li>
+              <li>Lorem</li>
+              <li>Ipsum</li>
+              <li>Dolor</li>
+              <li>Sit</li>
+              <li>Amet</li>
+              <li>Consectetur</li>
             </ul>
           </article>
           <article class="card lift">
-            <h3>Highlights</h3>
+            <h3>Ipsum</h3>
             <ul class="list">
-              <li>{Key result or achievement}</li>
-              <li>{Metric or impact statement}</li>
-              <li>{What you are optimizing for}</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed do eiusmod tempor</li>
             </ul>
           </article>
           <article class="card lift">
-            <h3>Now</h3>
-            <p>{What you are learning or building right now}</p>
+            <h3>Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero sed cursus ante dapibus.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <header class="section-head">
+          <h2>Experience</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </header>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2024 — Present · Lorem Ipsum</div>
+            <h3>Lorem ipsum dolor sit amet</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2021 — 2024 · Dolor Sit</div>
+            <h3>Consectetur adipiscing elit</h3>
+            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">2018 — 2021 · Amet Consectetur</div>
+            <h3>Sed do eiusmod tempor</h3>
+            <p>Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue.</p>
           </article>
         </div>
       </section>
@@ -91,7 +124,7 @@
       <section id="projects" class="section">
         <header class="section-head">
           <h2>Projects</h2>
-          <p>Filter by tag.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
           <div class="filters" role="toolbar" aria-label="Project filters">
             <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
             <button class="chip" data-filter="web">Web</button>
@@ -102,53 +135,53 @@
 
         <div class="project-grid">
           <article class="project card reveal" data-tags="web tools">
-            <img src="https://picsum.photos/640/360?1" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Placeholder project illustration" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 1}</h3>
-              <p>{1-2 sentence project summary with tech and outcome}</p>
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis est non commodo luctus.</p>
               <ul class="tags"><li>web</li><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="#" aria-disabled="true">Lorem</a>
+                <a class="btn btn-small btn-ghost" href="#" aria-disabled="true">Ipsum</a>
               </div>
             </div>
           </article>
 
           <article class="project card reveal" data-tags="ml web">
-            <img src="https://picsum.photos/640/360?2" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80&sat=-100" alt="Placeholder abstract pattern" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 2}</h3>
-              <p>{Brief description, stack, and role}</p>
+              <h3>Dolor Sit</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.</p>
               <ul class="tags"><li>ml</li><li>web</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Live URL}" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="#" aria-disabled="true">Lorem</a>
+                <a class="btn btn-small btn-ghost" href="#" aria-disabled="true">Ipsum</a>
               </div>
             </div>
           </article>
 
           <article class="project card reveal" data-tags="tools">
-            <img src="https://picsum.photos/640/360?3" alt="Project cover" loading="lazy" width="640" height="360" />
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Placeholder command interface" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 3}</h3>
-              <p>{Key features and impact in one line}</p>
+              <h3>Amet Consectetur</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum.</p>
               <ul class="tags"><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Docs URL}">Docs</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="#" aria-disabled="true">Lorem</a>
+                <a class="btn btn-small btn-ghost" href="#" aria-disabled="true">Ipsum</a>
               </div>
             </div>
           </article>
 
-                    <article class="project card reveal" data-tags="tools">
-            <img src="https://picsum.photos/640/360?4" alt="Project cover" loading="lazy" width="640" height="360" />
+          <article class="project card reveal" data-tags="tools">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Placeholder workspace" loading="lazy" width="640" height="360" />
             <div class="project-body">
-              <h3>{Project Title 4}</h3>
-              <p>{Key features and impact in one line}</p>
+              <h3>Sit Amet</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus tellus ac cursus commodo.</p>
               <ul class="tags"><li>tools</li></ul>
               <div class="actions">
-                <a class="btn btn-small" href="{Docs URL}">Docs</a>
-                <a class="btn btn-small btn-ghost" href="{Repo URL}" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-small" href="#" aria-disabled="true">Lorem</a>
+                <a class="btn btn-small btn-ghost" href="#" aria-disabled="true">Ipsum</a>
               </div>
             </div>
           </article>
@@ -156,58 +189,48 @@
       </section>
 
       <section id="blog" class="section">
-  <header class="section-head">
-    <h2>Blog</h2>
-    <p>Insights, tutorials, and updates.</p>
-  </header>
+        <header class="section-head">
+          <h2>Blog</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </header>
 
-  <div class="blog-grid">
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog1" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 1}" target="_blank" rel="noopener">{Blog Post Title 1}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
+        <div class="blog-grid">
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Placeholder blog cover" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog-lorem.html">Lorem Ipsum Dolor</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <time datetime="2024-02-12">Feb 12, 2024</time>
+            </div>
+          </article>
 
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog2" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 2}" target="_blank" rel="noopener">{Blog Post Title 2}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Placeholder gradient" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog-dolor.html">Dolor Sit Amet</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <time datetime="2023-11-04">Nov 4, 2023</time>
+            </div>
+          </article>
 
-    <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog3" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 3}" target="_blank" rel="noopener">{Blog Post Title 3}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
-
-
-      <article class="card lift">
-      <img src="https://picsum.photos/640/360?blog4" alt="Blog post cover" loading="lazy" width="640" height="360" />
-      <div class="blog-body">
-        <h3><a href="{Blog Post URL 3}" target="_blank" rel="noopener">{Blog Post Title 4}</a></h3>
-        <p>{Brief summary or excerpt of the post.}</p>
-        <time datetime="{YYYY-MM-DD}">{Readable Date}</time>
-      </div>
-    </article>
-  </div>
-</section>
+          <article class="card lift reveal">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" alt="Placeholder collaboration" loading="lazy" width="640" height="360" />
+            <div class="blog-body">
+              <h3><a href="blog-amet.html">Amet Consectetur</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <time datetime="2023-07-22">Jul 22, 2023</time>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <section id="contact" class="section">
         <header class="section-head">
           <h2>Contact</h2>
-          <p>{How to reach you, response policy}</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </header>
         <div class="contact-grid">
-          <form class="card lift contact-form" method="get" action="mailto:{your.email@example.com}">
+          <form class="card lift contact-form" method="get" action="mailto:hello@example.com">
             <label>
               Name
               <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
@@ -224,10 +247,10 @@
           </form>
 
           <aside class="card lift">
-            <h3>Links</h3>
+            <h3>Lorem Ipsum</h3>
             <ul class="list">
-              <li>GitHub: <a href="https://github.com/{your-handle}" target="_blank" rel="noopener">github.com/{your-handle}</a></li>
-              <li>Email: <a href="mailto:{your.email@example.com}">{your.email@example.com}</a></li>
+              <li>GitHub: <a href="#" aria-disabled="true">github.com/username</a></li>
+              <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
             </ul>
           </aside>
         </div>
@@ -235,10 +258,11 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> {Your Name}. Built with HTML, CSS, and JS.</p>
+      <p>© <span id="year"></span> Çağrı Çatık. Crafted with curiosity & intent.</p>
       <a href="#top" class="back-to-top" aria-label="Back to top">Top</a>
     </footer>
 
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
